@@ -8,8 +8,14 @@ let tempRes
 
 const buttons = document.querySelectorAll('.button')
 
+
 buttons.forEach(button => {
     button.addEventListener('click', e => {
-        output.innerText += e.target.innerText
+        if (output.innerText === '0') {
+            output.innerText = e.target.innerText
+        }
+        else{
+            output.innerText += e.target.innerText
+        }
     })
 });
