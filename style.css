@@ -17,8 +17,37 @@ body{
 }
 .container{
     width:90%;
-    max-width:400px;
+    max-width:300px;
     background-color:rgb(56, 56, 68);
     border-radius:10px;
     overflow:hidden;
+}
+.output{
+    background-color: rgb(171, 169, 179);
+    padding:25px;
+    text-align: right;
+}
+.result-0{
+    opacity:.4;
+    overflow:hidden;
+}
+.buttons{
+    color:white;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.button{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding:30px;
+    cursor:pointer;
+}
+.button:hover{
+    background-color:#565669;
+    transition: .2s ease;
+    border-radius:5px;
+}
+.space{
+    grid-column: 1/3;
 }
