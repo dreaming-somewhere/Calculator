@@ -11,6 +11,7 @@ buttons.forEach(button => {
                 output.innerText = '0'
                 temp.innerText = '0'
                 currentOperator.innerText = ''
+                res = ''
                 break;
             case '←':
                 if(output.innerText > '0'){
@@ -23,8 +24,12 @@ buttons.forEach(button => {
                     return
                 }
                 else{
-                    temp.innerText = output.innerText
-                    temp.innerText = res
+                    if (res) {
+                        temp.innerText = res
+                    }
+                    else{
+                        temp.innerText = output.innerText
+                    }
                     output.innerText = '0'  
                 }
                 break;
@@ -65,6 +70,7 @@ buttons.forEach(button => {
                 }
                 else if(output.innerText.includes('.')){
                     return
+                    
                 }
                 else{
                     output.innerText += e.target.innerText
@@ -82,10 +88,6 @@ buttons.forEach(button => {
         }
         switch (currentOperator.innerText) {
             case '+':
-                if (output.innerText === '0') {
-                    return
-                }
-                else{
                     res = eval(output.innerText + currentOperator.innerText + temp.innerText)
                     console.log(`output is :${output.innerText}`) // what the fuck did i jsut do
                     console.log(`temp is :${temp.innerText}`)
@@ -94,9 +96,8 @@ buttons.forEach(button => {
                         temp.innerText = res
                     }
                     res = temp.innerText
-                }
                 break;
-        
+                    
             default:
                 break;
         }
