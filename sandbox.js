@@ -6,7 +6,7 @@ let tempRes
 
 // buttons variables
 
-const buttons = document.querySelectorAll('.number')
+const buttons = document.querySelectorAll('.button')
 
 
 buttons.forEach(button => {
@@ -14,35 +14,41 @@ buttons.forEach(button => {
         switch (e.target.innerText) {
             case 'C':
                 output.innerText = '0'
-                temp.innerText = '0'
                 break;
             case '←':
                 if(output.innerText > '0'){
                     output.innerText = output.innerText.slice(0,-1)
-                    if(!output.innerText){
-                        output.innerText= '0'
-                    }
                 }
                 break;
             case '+':
-                if (!output.innerText) {
-                    temp.innerText = output.innerText
+                if (temp.innerText === '0') {
+                    temp.innerText = output.innerText + '+'
+                    output.innerText = '0'
                 }
                 else{
-                    temp.innerText += output.innerText
+                    if (temp.innerText.endsWith('+')) {
+                        return
+                    }
+                    else{
+                        temp.innerText += output.innerText + '+'
+                        output.innerText = '0'
+                    }
                 }
                 break;
+                case '.':
+                    if(output.innerText === '0'){
+                        output.innerText += e.target.innerText
+                    }
+                    break;
             default:
                 if (output.innerText === '0') {
                     output.innerText = e.target.innerText
                 }
                 else{
-                    if (e.target.textContent === '.' && output.innerText.includes('.')) {
-                        return
-                    }
                     output.innerText += e.target.innerText
                 }
                 break;
         }
     })
 });
+
