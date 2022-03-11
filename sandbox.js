@@ -1,8 +1,8 @@
 const output = document.querySelector('.result-1')
 const temp = document.querySelector('.result-0')
-const currentOperator = document.querySelector('.op')
+const currentOperator = document.querySelectorAll('.operation')
 const buttons = document.querySelectorAll('.button')
-let res = 0
+let res
 
 buttons.forEach(button => {
     button.addEventListener('click', e => {
@@ -28,7 +28,7 @@ buttons.forEach(button => {
                         temp.innerText = res
                     }
                     else{
-                        temp.innerText = output.innerText
+                        temp.innerText = output.innerText + currentOperator.innerText
                     }
                     output.innerText = '0'  
                 }
@@ -40,9 +40,9 @@ buttons.forEach(button => {
                 }
                 else{
                     temp.innerText = output.innerText
-                    output.innerText = '0'    
+                    output.innerText = '0'
+
                 }
-                break;
             case 'x':
                 currentOperator.innerText = 'x'
                 if (output.innerText === '0') {
@@ -86,18 +86,20 @@ buttons.forEach(button => {
                 break;
 
         }
-        switch (currentOperator.innerText) {
+    })
+});
+
+currentOperator.forEach(operator => {
+    operator.addEventListener('click', e => {
+        switch (operator.innerText) {
             case '+':
-                    res = eval(output.innerText + currentOperator.innerText + temp.innerText)
-                    console.log(`output is :${output.innerText}`) // what the fuck did i jsut do
-                    console.log(`temp is :${temp.innerText}`)
-                    console.log(`res is:${res}`)
-                    if (res) {
-                        temp.innerText = res
-                    }
-                    res = temp.innerText
+                additionRes = output.innerText + temp.innerText
+                console.log(additionRes)
+                console.log(output.innerText)
+                console.log(temp.innerText)
                 break;
                 case '-':
+                    console.log('SUB')
                     res = eval(output.innerText + currentOperator.innerText + temp.innerText)
                     console.log(`output is :${output.innerText}`) // what the fuck did i jsut do
                     console.log(`temp is :${temp.innerText}`)
@@ -108,6 +110,7 @@ buttons.forEach(button => {
                     res = temp.innerText
                 break;
                 case 'x':
+                    console.log('DIV')
                     res = eval(output.innerText + currentOperator.innerText + temp.innerText)
                     console.log(`output is :${output.innerText}`) // what the fuck did i jsut do
                     console.log(`temp is :${temp.innerText}`)
@@ -118,6 +121,7 @@ buttons.forEach(button => {
                     res = temp.innerText
                 break;
                 case '/':
+                    console.log('SUB')
                     res = eval(output.innerText + currentOperator.innerText + temp.innerText)
                     console.log(`output is :${output.innerText}`) // what the fuck did i jsut do
                     console.log(`temp is :${temp.innerText}`)
@@ -132,4 +136,3 @@ buttons.forEach(button => {
         }
     })
 });
-
