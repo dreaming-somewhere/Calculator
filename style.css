@@ -50,6 +50,9 @@ body{
     transition: .2s ease;
     border-radius:5px;
 }
+.equal{
+    grid-column: 3/5;
+}
 .space{
     grid-column: 1/3;
 }
