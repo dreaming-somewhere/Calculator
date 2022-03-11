@@ -29,7 +29,6 @@ body{
     text-align: right;
 }
 .result-0{
-    opacity:.4;
     overflow:hidden;
 }
 
@@ -55,4 +54,10 @@ body{
 }
 .space{
     grid-column: 1/3;
+}
+.results{
+    display:flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    opacity:.4;
 }

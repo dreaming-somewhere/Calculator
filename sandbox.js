@@ -2,7 +2,7 @@
 
 const output = document.querySelector('.result-1')
 const temp = document.querySelector('.result-0')
-let currentOperator
+const currentOperator = document.querySelector('.op')
 // buttons variables
 
 const buttons = document.querySelectorAll('.button')
@@ -14,6 +14,7 @@ buttons.forEach(button => {
             case 'C':
                 output.innerText = '0'
                 temp.innerText = '0'
+                currentOperator.innerText = ''
                 break;
             case '←':
                 if(output.innerText > '0'){
@@ -21,42 +22,42 @@ buttons.forEach(button => {
                 }
                 break;
             case '+':
-                currentOperator = '+'
+                currentOperator.innerText = '+'
                 if (output.innerText === '0') {
                     return
                 }
                 else{
-                    temp.innerText = output.innerText + '+'
+                    temp.innerText = output.innerText
                     output.innerText = '0'    
                 }
                 break;
             case '-':
-                currentOperator = '-'
+                currentOperator.innerText = '-'
                 if (output.innerText === '0') {
                     return
                 }
                 else{
-                    temp.innerText = output.innerText + '-'
+                    temp.innerText = output.innerText
                     output.innerText = '0'    
                 }
                 break;
             case 'x':
-                currentOperator = 'x'
+                currentOperator.innerText = 'x'
                 if (output.innerText === '0') {
                     return
                 }
                 else{
-                    temp.innerText = output.innerText + 'x'
+                    temp.innerText = output.innerText
                     output.innerText = '0'    
                 }
                 break;
             case '/':
-                currentOperator = '-'
+                currentOperator.innerText = '/'
                 if (output.innerText === '0') {
                     return
                 }
                 else{
-                    temp.innerText = output.innerText + '/'
+                    temp.innerText = output.innerText
                     output.innerText = '0'    
                 }
                 break;
@@ -81,7 +82,7 @@ buttons.forEach(button => {
                 break;
 
         }
-        switch (currentOperator) {
+        switch (currentOperator.innerText) {
             case '+':
                 let res
                 res = output.innerText + temp.innerText
