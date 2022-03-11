@@ -70,7 +70,7 @@ buttons.forEach(button => {
                 }
                 else if(output.innerText.includes('.')){
                     return
-                    
+
                 }
                 else{
                     output.innerText += e.target.innerText
@@ -97,7 +97,36 @@ buttons.forEach(button => {
                     }
                     res = temp.innerText
                 break;
-                    
+                case '-':
+                    res = eval(output.innerText + currentOperator.innerText + temp.innerText)
+                    console.log(`output is :${output.innerText}`) // what the fuck did i jsut do
+                    console.log(`temp is :${temp.innerText}`)
+                    console.log(`res is:${res}`)
+                    if (res) {
+                        temp.innerText = res
+                    }
+                    res = temp.innerText
+                break;
+                case 'x':
+                    res = eval(output.innerText + currentOperator.innerText + temp.innerText)
+                    console.log(`output is :${output.innerText}`) // what the fuck did i jsut do
+                    console.log(`temp is :${temp.innerText}`)
+                    console.log(`res is:${res}`)
+                    if (res) {
+                        temp.innerText = res
+                    }
+                    res = temp.innerText
+                break;
+                case '/':
+                    res = eval(output.innerText + currentOperator.innerText + temp.innerText)
+                    console.log(`output is :${output.innerText}`) // what the fuck did i jsut do
+                    console.log(`temp is :${temp.innerText}`)
+                    console.log(`res is:${res}`)
+                    if (res) {
+                        temp.innerText = res
+                    }
+                    res = temp.innerText
+                break;
             default:
                 break;
         }
