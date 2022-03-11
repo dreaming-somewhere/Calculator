@@ -1,12 +1,8 @@
-// output variables
-
 const output = document.querySelector('.result-1')
 const temp = document.querySelector('.result-0')
 const currentOperator = document.querySelector('.op')
-// buttons variables
-
 const buttons = document.querySelectorAll('.button')
-
+let res = 0
 
 buttons.forEach(button => {
     button.addEventListener('click', e => {
@@ -28,7 +24,8 @@ buttons.forEach(button => {
                 }
                 else{
                     temp.innerText = output.innerText
-                    output.innerText = '0'    
+                    temp.innerText = res
+                    output.innerText = '0'  
                 }
                 break;
             case '-':
@@ -48,7 +45,8 @@ buttons.forEach(button => {
                 }
                 else{
                     temp.innerText = output.innerText
-                    output.innerText = '0'    
+                    output.innerText = '0'
+
                 }
                 break;
             case '/':
@@ -84,11 +82,19 @@ buttons.forEach(button => {
         }
         switch (currentOperator.innerText) {
             case '+':
-                let res
-                res = output.innerText + temp.innerText
-                console.log(`output is:${output.innerText}`) // what the fuck did i jsut do
-                console.log(`temp is:${temp.innerText}`)
-                console.log(`res is:${res}`)
+                if (output.innerText === '0') {
+                    return
+                }
+                else{
+                    res = eval(output.innerText + currentOperator.innerText + temp.innerText)
+                    console.log(`output is :${output.innerText}`) // what the fuck did i jsut do
+                    console.log(`temp is :${temp.innerText}`)
+                    console.log(`res is:${res}`)
+                    if (res) {
+                        temp.innerText = res
+                    }
+                    res = temp.innerText
+                }
                 break;
         
             default:
