@@ -39,6 +39,12 @@ buttons.forEach(button => {
                     if(output.innerText === '0'){
                         output.innerText += e.target.innerText
                     }
+                    else if(output.innerText.includes('.')){
+                        return
+                    }
+                    else{
+                        output.innerText += e.target.innerText
+                    }
                     break;
             default:
                 if (output.innerText === '0') {
