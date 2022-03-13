@@ -114,10 +114,13 @@ buttons.forEach(button => {
                     return
                 }
                 else{
+                    if (tempVar === '0') {
+                        alert('its zero')
+                    }
                     outputVar = output.innerText
-                    currentOperator.innerText = '-'
+                    res = eval(tempVar + currentOperator.innerText + outputVar)
                     console.log('currentOperator took -')
-                    res = eval(outputVar + currentOperator.innerText + tempVar)
+                    currentOperator.innerText = '-'
                     console.log(`currentOperator: ${currentOperator.innerText}`)
                     console.log(`tempVar: ${tempVar}`)
                     console.log(`outputVar: ${outputVar}`)
@@ -140,19 +143,19 @@ buttons.forEach(button => {
                 }
                 else{
                     outputVar = output.innerText
+                    res = eval(tempVar + currentOperator.innerText + outputVar)
+                    console.log('currentOperator took *')
                     currentOperator.innerText = '*'
-                    console.log('currentOperator took -')
-                    res = eval(outputVar + currentOperator.innerText + tempVar)
                     console.log(`currentOperator: ${currentOperator.innerText}`)
                     console.log(`tempVar: ${tempVar}`)
                     console.log(`outputVar: ${outputVar}`)
                     console.log(`res: ${res}`)
+                    temp.innerText = res
                     upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
                     upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
                     upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
                     upd.innerHTML += `<P>Result: ${res}</p>`
                     upd.innerHTML += `<br>`
-                    temp.innerText = res
                     tempVar = res
                     output.innerText = '0'
                 }
