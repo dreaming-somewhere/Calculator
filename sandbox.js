@@ -28,19 +28,33 @@ buttons.forEach(button => {
                 break;
             case '+':
                 currentOperator.innerText = '+'
+                console.log('ADDITION OPERATON:')
                 if (output.innerText === '0') {
                     return
                 }
                 else if(tempVar){
                     outputVar = output.innerText
                     res = eval(outputVar + currentOperator.innerText + tempVar)
+                    console.log(`currentOperator: ${currentOperator.innerText}`)
                     console.log(`tempVar: ${tempVar}`)
                     console.log(`outputVar: ${outputVar}`)
                     console.log(`res: ${res}`)
-                    console.log(`currentOperator: ${currentOperator.innerText}`)
                     temp.innerText = res
+                    tempVar = res
                     output.innerText = '0'
                     return
+                }
+                else if(tempVar && outputVar){
+                    // outputVar = output.innerText
+                    // res = eval(outputVar + currentOperator.innerText + tempVar)
+                    // console.log(`currentOperator: ${currentOperator.innerText}`)
+                    // console.log(`tempVar: ${tempVar}`)
+                    // console.log(`outputVar: ${outputVar}`)
+                    // console.log(`res: ${res}`)
+                    // temp.innerText = res
+                    // output.innerText = '0'
+                    // return
+                    alert('doable')
                 }
                 else{
                     tempVar = output.innerText
@@ -109,7 +123,7 @@ currentOperator.forEach(operator => {
     operator.addEventListener('click', e => {
         switch (operator.innerText) {
             case '+':
-                console.log('ADD')
+
                 // outputVar = output.innerText
                 break;
                 case '-':
