@@ -114,9 +114,6 @@ buttons.forEach(button => {
                     return
                 }
                 else{
-                    if (tempVar === '0') {
-                        alert('its zero')
-                    }
                     outputVar = output.innerText
                     currentOperator.innerText = '-'
                     console.log('currentOperator took -')
