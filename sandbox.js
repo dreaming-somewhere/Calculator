@@ -2,6 +2,8 @@ const output = document.querySelector('.result-1')
 const temp = document.querySelector('.result-0')
 const currentOperator = document.querySelectorAll('.operation')
 const buttons = document.querySelectorAll('.button')
+let outputVar
+let tempVar = ''
 let res
 
 buttons.forEach(button => {
@@ -23,13 +25,14 @@ buttons.forEach(button => {
                 if (output.innerText === '0') {
                     return
                 }
+                else if(tempVar){
+                    console.log(`tempVar: ${tempVar}`)
+                    console.log(`outputVar: ${outputVar}`)
+                }
                 else{
-                    if (res) {
-                        temp.innerText = res
-                    }
-                    else{
-                        temp.innerText = output.innerText + currentOperator.innerText
-                    }
+                    tempVar = output.innerText
+                    temp.innerText = output.innerText + currentOperator.innerText
+                    console.log(tempVar)
                     output.innerText = '0'  
                 }
                 break;
@@ -93,15 +96,13 @@ currentOperator.forEach(operator => {
     operator.addEventListener('click', e => {
         switch (operator.innerText) {
             case '+':
-                additionRes = output.innerText + temp.innerText
-                console.log(additionRes)
-                console.log(output.innerText)
-                console.log(temp.innerText)
+                console.log('ADD')
+                outputVar = output.innerText
                 break;
                 case '-':
                     console.log('SUB')
                     res = eval(output.innerText + currentOperator.innerText + temp.innerText)
-                    console.log(`output is :${output.innerText}`) // what the fuck did i jsut do
+                    console.log(`output is :${output.innerText}`) 
                     console.log(`temp is :${temp.innerText}`)
                     console.log(`res is:${res}`)
                     if (res) {
@@ -112,7 +113,7 @@ currentOperator.forEach(operator => {
                 case 'x':
                     console.log('DIV')
                     res = eval(output.innerText + currentOperator.innerText + temp.innerText)
-                    console.log(`output is :${output.innerText}`) // what the fuck did i jsut do
+                    console.log(`output is :${output.innerText}`) 
                     console.log(`temp is :${temp.innerText}`)
                     console.log(`res is:${res}`)
                     if (res) {
@@ -123,7 +124,7 @@ currentOperator.forEach(operator => {
                 case '/':
                     console.log('SUB')
                     res = eval(output.innerText + currentOperator.innerText + temp.innerText)
-                    console.log(`output is :${output.innerText}`) // what the fuck did i jsut do
+                    console.log(`output is :${output.innerText}`) 
                     console.log(`temp is :${temp.innerText}`)
                     console.log(`res is:${res}`)
                     if (res) {
@@ -136,3 +137,5 @@ currentOperator.forEach(operator => {
         }
     })
 });
+
+
