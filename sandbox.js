@@ -72,6 +72,37 @@ buttons.forEach(button => {
                     output.innerText = '0'  
                 }
                 break;
+            case '-':
+                if (currentOperator.innerText) {
+                    
+                }
+                else{
+                    currentOperator.innerText = '-'
+                }
+                console.log('SUBTRACTION OPERATON:')
+                if (output.innerText === '0') {
+                    return
+                }
+                else if(tempVar){
+                    outputVar = output.innerText
+                    res = eval(outputVar + currentOperator.innerText + tempVar)
+                    console.log(tempVar + currentOperator.innerText + outputVar)
+                    console.log(`currentOperator: ${currentOperator.innerText}`)
+                    console.log(`tempVar: ${tempVar}`)
+                    console.log(`outputVar: ${outputVar}`)
+                    console.log(`res: ${res}`)
+                    temp.innerText = res
+                    tempVar = res
+                    output.innerText = '0'
+                    return
+                }
+                else{
+                    tempVar = output.innerText
+                    temp.innerText = output.innerText + currentOperator.innerText
+                    console.log(tempVar)
+                    output.innerText = '0'  
+                }
+                break;
             case 'x':
                 if (currentOperator.innerText) {
                     
