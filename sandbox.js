@@ -2,6 +2,8 @@ const output = document.querySelector('.result-1')
 const temp = document.querySelector('.result-0')
 const currentOperator = document.querySelectorAll('.operation')
 const buttons = document.querySelectorAll('.button')
+const upd = document.querySelector('.upd')
+
 let outputVar = 0
 let tempVar = 0
 let res = 0
@@ -11,6 +13,13 @@ console.log(`currentOperator: ${currentOperator.innerText}`)
 console.log(`tempVar: ${tempVar}`)
 console.log(`outputVar: ${outputVar}`)
 console.log(`res: ${res}`)
+
+upd.innerHTML += `<P>INITIALIZED VALUES</p>`
+upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
+upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
+upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
+upd.innerHTML += `<P>Result: ${res}</p>`
+upd.innerHTML += `<br>`
 
 buttons.forEach(button => {
     button.addEventListener('click', e => {
@@ -22,6 +31,13 @@ buttons.forEach(button => {
                 outputVar = '0'
                 tempVar = '0'
                 currentOperator.innerText = ''
+                upd.innerText = ''
+                upd.innerHTML += `<P>CLEARING THE VALUES</p>`
+                upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
+                upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
+                upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
+                upd.innerHTML += `<P>Result: ${res}</p>`
+                upd.innerHTML += `<br>`
                 console.log(`tempVar: ${tempVar}`)
                 console.log(`outputVar: ${outputVar}`)
                 console.log(`res: ${res}`)
@@ -34,7 +50,7 @@ buttons.forEach(button => {
                 break;
             case '=':
                 outputVar = output.innerText
-                console.log('EQUAL OPERATON:')
+                console.log('CALCULATING:')
                 console.log('VALUES BEFORE THE CALCULATION')
                 console.log(`currentOperator: ${currentOperator.innerText}`)
                 console.log(`tempVar: ${tempVar}`)
@@ -43,6 +59,12 @@ buttons.forEach(button => {
                 console.log(tempVar + currentOperator.innerText + outputVar)
                 res = eval(tempVar + currentOperator.innerText + outputVar)
                 console.log(res)
+                upd.innerHTML += `<P>CALCULATING:</p>`
+                upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
+                upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
+                upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
+                upd.innerHTML += `<P>Result: ${res}</p>`
+                upd.innerHTML += `<br>`
                 outputVar = 0
                 temp.innerText = 0
                 tempVar = 0
@@ -56,6 +78,7 @@ buttons.forEach(button => {
                 break;
             case '+':
                 console.log('ADDITION OPERATON:')
+                upd.innerHTML += `<P>ADDITION OPERATON:</p>`
                 if (output.innerText === '0') {
                     return
                 }
@@ -69,6 +92,11 @@ buttons.forEach(button => {
                     console.log(`tempVar: ${tempVar}`)
                     console.log(`outputVar: ${outputVar}`)
                     console.log(`res: ${res}`)
+                    upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
+                    upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
+                    upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
+                    upd.innerHTML += `<P>Result: ${res}</p>`
+                    upd.innerHTML += `<br>`
                     temp.innerText = res
                     tempVar = res
                     output.innerText = '0'
@@ -77,6 +105,7 @@ buttons.forEach(button => {
                 break;
             case '-':
                 console.log('SUBTRACTION OPERATON:')
+                upd.innerHTML += `<P>SUBTRACTION OPERATON:</p>`
                 if (output.innerText === '0') {
                     return
                 }
@@ -89,6 +118,11 @@ buttons.forEach(button => {
                     console.log(`tempVar: ${tempVar}`)
                     console.log(`outputVar: ${outputVar}`)
                     console.log(`res: ${res}`)
+                    upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
+                    upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
+                    upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
+                    upd.innerHTML += `<P>Result: ${res}</p>`
+                    upd.innerHTML += `<br>`
                     temp.innerText = res
                     tempVar = res
                     output.innerText = '0'
@@ -96,6 +130,7 @@ buttons.forEach(button => {
                 break;
             case 'x':
                 console.log('MULTIPLICATION OPERATON:')
+                upd.innerHTML += `<P>MULTIPLICATION OPERATON:</p>`
                 if (output.innerText === '0') {
                     return
                 }
@@ -109,6 +144,11 @@ buttons.forEach(button => {
                     console.log(`outputVar: ${outputVar}`)
                     console.log(`res: ${res}`)
                     temp.innerText = res
+                    upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
+                    upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
+                    upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
+                    upd.innerHTML += `<P>Result: ${res}</p>`
+                    upd.innerHTML += `<br>`
                     tempVar = res
                     output.innerText = '0'
                 }
@@ -116,6 +156,7 @@ buttons.forEach(button => {
 
             case '/':
                 console.log('DIVISION OPERATON:')
+                upd.innerHTML += `<P>DIVISION OPERATON:</p>`
                 if (output.innerText === '0') {
                     return
                 }
@@ -128,6 +169,11 @@ buttons.forEach(button => {
                     console.log(`tempVar: ${tempVar}`)
                     console.log(`outputVar: ${outputVar}`)
                     console.log(`res: ${res}`)
+                    upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
+                    upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
+                    upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
+                    upd.innerHTML += `<P>Result: ${res}</p>`
+                    upd.innerHTML += `<br>`
                     temp.innerText = res
                     tempVar = res
                     output.innerText = '0'

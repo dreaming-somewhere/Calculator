@@ -69,3 +69,22 @@ body{
     font-size:25px;
     margin-top:5px;
 }
+
+.anotherContainer{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.upd{
+    font-family: consolas;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #0f1621;
+    border-radius: 8px;
+    color:rgb(216, 220, 236);
+    width:350px;
+    height:350px;
+    padding:10px;
+    font-size: 14px;
+    overflow:auto;
+}
