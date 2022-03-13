@@ -3,8 +3,8 @@ const temp = document.querySelector('.result-0')
 const currentOperator = document.querySelectorAll('.operation')
 const buttons = document.querySelectorAll('.button')
 let outputVar
-let tempVar = ''
-let res
+let tempVar = 0
+let res = 0
 
 buttons.forEach(button => {
     button.addEventListener('click', e => {
@@ -26,8 +26,12 @@ buttons.forEach(button => {
                     return
                 }
                 else if(tempVar){
+                    outputVar = output.innerText
+                    res = eval(outputVar + currentOperator.innerText + tempVar)
                     console.log(`tempVar: ${tempVar}`)
                     console.log(`outputVar: ${outputVar}`)
+                    console.log(`res: ${res}`)
+                    console.log(`currentOperator: ${currentOperator.innerText}`)
                 }
                 else{
                     tempVar = output.innerText
