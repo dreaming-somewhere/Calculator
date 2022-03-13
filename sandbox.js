@@ -26,8 +26,29 @@ buttons.forEach(button => {
                     output.innerText = output.innerText.slice(0,-1)
                 }
                 break;
+            case '=':
+                console.log('EQUAL OPERATON:')
+                console.log(outputVar + currentOperator.innerText + tempVar)
+                outputVar = output.innerText
+                res = eval(tempVar + currentOperator.innerText + outputVar)
+                console.log(res)
+                outputVar = 0
+                temp.innerText = 0
+                tempVar = 0
+                currentOperator.innerText = 0
+                output.innerText = res
+                console.log(`currentOperator: ${currentOperator.innerText}`)
+                console.log(`tempVar: ${tempVar}`)
+                console.log(`outputVar: ${outputVar}`)
+                console.log(`res: ${res}`)
+                break;
             case '+':
-                currentOperator.innerText = '+'
+                if (currentOperator.innerText) {
+                    
+                }
+                else{
+                    currentOperator.innerText = '+'
+                }
                 console.log('ADDITION OPERATON:')
                 if (output.innerText === '0') {
                     return
@@ -44,17 +65,36 @@ buttons.forEach(button => {
                     output.innerText = '0'
                     return
                 }
-                else if(tempVar && outputVar){
-                    // outputVar = output.innerText
-                    // res = eval(outputVar + currentOperator.innerText + tempVar)
-                    // console.log(`currentOperator: ${currentOperator.innerText}`)
-                    // console.log(`tempVar: ${tempVar}`)
-                    // console.log(`outputVar: ${outputVar}`)
-                    // console.log(`res: ${res}`)
-                    // temp.innerText = res
-                    // output.innerText = '0'
-                    // return
-                    alert('doable')
+                else{
+                    tempVar = output.innerText
+                    temp.innerText = output.innerText + currentOperator.innerText
+                    console.log(tempVar)
+                    output.innerText = '0'  
+                }
+                break;
+            case 'x':
+                if (currentOperator.innerText) {
+                    
+                }
+                else{
+                    currentOperator.innerText = '*'
+                }
+                console.log('MLLTIPLICATION OPERATON:')
+                if (output.innerText === '0') {
+                    return
+                }
+                else if(tempVar){
+                    outputVar = output.innerText
+                    res = eval(outputVar + currentOperator.innerText + tempVar)
+                    console.log(outputVar + currentOperator.innerText + tempVar)
+                    console.log(`currentOperator: ${currentOperator.innerText}`)
+                    console.log(`tempVar: ${tempVar}`)
+                    console.log(`outputVar: ${outputVar}`)
+                    console.log(`res: ${res}`)
+                    temp.innerText = res
+                    tempVar = res
+                    output.innerText = '0'
+                    return
                 }
                 else{
                     tempVar = output.innerText
@@ -63,35 +103,36 @@ buttons.forEach(button => {
                     output.innerText = '0'  
                 }
                 break;
-            case '-':
-                currentOperator.innerText = '-'
-                if (output.innerText === '0') {
-                    return
-                }
-                else{
-                    temp.innerText = output.innerText
-                    output.innerText = '0'
 
-                }
-            case 'x':
-                currentOperator.innerText = 'x'
-                if (output.innerText === '0') {
-                    return
-                }
-                else{
-                    temp.innerText = output.innerText
-                    output.innerText = '0'
-
-                }
-                break;
             case '/':
-                currentOperator.innerText = '/'
+                if (currentOperator.innerText) {
+                    
+                }
+                else{
+                    currentOperator.innerText = '/'
+                }
+                console.log('DIVISION OPERATON:')
                 if (output.innerText === '0') {
                     return
                 }
+                else if(tempVar){
+                    outputVar = output.innerText
+                    res = eval(tempVar + currentOperator.innerText + outputVar)
+                    console.log(outputVar + currentOperator.innerText + tempVar)
+                    console.log(`currentOperator: ${currentOperator.innerText}`)
+                    console.log(`tempVar: ${tempVar}`)
+                    console.log(`outputVar: ${outputVar}`)
+                    console.log(`res: ${res}`)
+                    temp.innerText = res
+                    tempVar = res
+                    output.innerText = '0'
+                    return
+                }
                 else{
-                    temp.innerText = output.innerText
-                    output.innerText = '0'    
+                    tempVar = output.innerText
+                    temp.innerText = output.innerText + currentOperator.innerText
+                    console.log(tempVar)
+                    output.innerText = '0'  
                 }
                 break;
             case '.':
@@ -119,50 +160,50 @@ buttons.forEach(button => {
     })
 });
 
-currentOperator.forEach(operator => {
-    operator.addEventListener('click', e => {
-        switch (operator.innerText) {
-            case '+':
+// currentOperator.forEach(operator => {
+//     operator.addEventListener('click', e => {
+//         switch (operator.innerText) {
+//             case '+':
 
-                // outputVar = output.innerText
-                break;
-                case '-':
-                    console.log('SUB')
-                    res = eval(output.innerText + currentOperator.innerText + temp.innerText)
-                    console.log(`output is :${output.innerText}`) 
-                    console.log(`temp is :${temp.innerText}`)
-                    console.log(`res is:${res}`)
-                    if (res) {
-                        temp.innerText = res
-                    }
-                    res = temp.innerText
-                break;
-                case 'x':
-                    console.log('DIV')
-                    res = eval(output.innerText + currentOperator.innerText + temp.innerText)
-                    console.log(`output is :${output.innerText}`) 
-                    console.log(`temp is :${temp.innerText}`)
-                    console.log(`res is:${res}`)
-                    if (res) {
-                        temp.innerText = res
-                    }
-                    res = temp.innerText
-                break;
-                case '/':
-                    console.log('SUB')
-                    res = eval(output.innerText + currentOperator.innerText + temp.innerText)
-                    console.log(`output is :${output.innerText}`) 
-                    console.log(`temp is :${temp.innerText}`)
-                    console.log(`res is:${res}`)
-                    if (res) {
-                        temp.innerText = res
-                    }
-                    res = temp.innerText
-                break;
-            default:
-                break;
-        }
-    })
-});
+//                 // outputVar = output.innerText
+//                 break;
+//                 case '-':
+//                     console.log('SUB')
+//                     res = eval(output.innerText + currentOperator.innerText + temp.innerText)
+//                     console.log(`output is :${output.innerText}`) 
+//                     console.log(`temp is :${temp.innerText}`)
+//                     console.log(`res is:${res}`)
+//                     if (res) {
+//                         temp.innerText = res
+//                     }
+//                     res = temp.innerText
+//                 break;
+//                 case 'x':
+//                     console.log('DIV')
+//                     res = eval(output.innerText + currentOperator.innerText + temp.innerText)
+//                     console.log(`output is :${output.innerText}`) 
+//                     console.log(`temp is :${temp.innerText}`)
+//                     console.log(`res is:${res}`)
+//                     if (res) {
+//                         temp.innerText = res
+//                     }
+//                     res = temp.innerText
+//                 break;
+//                 case '/':
+//                     console.log('SUB')
+//                     res = eval(output.innerText + currentOperator.innerText + temp.innerText)
+//                     console.log(`output is :${output.innerText}`) 
+//                     console.log(`temp is :${temp.innerText}`)
+//                     console.log(`res is:${res}`)
+//                     if (res) {
+//                         temp.innerText = res
+//                     }
+//                     res = temp.innerText
+//                 break;
+//             default:
+//                 break;
+//         }
+//     })
+// });
 
 
