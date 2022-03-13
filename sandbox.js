@@ -6,6 +6,12 @@ let outputVar = 0
 let tempVar = 0
 let res = 0
 
+console.log('INITIALIZED VALUES')
+console.log(`currentOperator: ${currentOperator.innerText}`)
+console.log(`tempVar: ${tempVar}`)
+console.log(`outputVar: ${outputVar}`)
+console.log(`res: ${res}`)
+
 buttons.forEach(button => {
     button.addEventListener('click', e => {
         switch (e.target.innerText) {
@@ -28,8 +34,8 @@ buttons.forEach(button => {
                 break;
             case '=':
                 console.log('EQUAL OPERATON:')
-                console.log(outputVar + currentOperator.innerText + tempVar)
                 outputVar = output.innerText
+                console.log(outputVar + currentOperator.innerText + tempVar)
                 res = eval(tempVar + currentOperator.innerText + outputVar)
                 console.log(res)
                 outputVar = 0
@@ -43,10 +49,7 @@ buttons.forEach(button => {
                 console.log(`res: ${res}`)
                 break;
             case '+':
-                if (currentOperator.innerText) {
-                    
-                }
-                else{
+                if (!currentOperator.innerText) {
                     currentOperator.innerText = '+'
                 }
                 console.log('ADDITION OPERATON:')
@@ -70,13 +73,15 @@ buttons.forEach(button => {
                     temp.innerText = output.innerText + currentOperator.innerText
                     console.log(tempVar)
                     output.innerText = '0'  
+                    console.log('ELSE VALUES')
+                    console.log(`currentOperator: ${currentOperator.innerText}`)
+                    console.log(`tempVar: ${tempVar}`)
+                    console.log(`outputVar: ${outputVar}`)
+                    console.log(`res: ${res}`)
                 }
                 break;
             case '-':
-                if (currentOperator.innerText) {
-                    
-                }
-                else{
+                if (!currentOperator.innerText) {
                     currentOperator.innerText = '-'
                 }
                 console.log('SUBTRACTION OPERATON:')
@@ -104,20 +109,16 @@ buttons.forEach(button => {
                 }
                 break;
             case 'x':
-                if (currentOperator.innerText) {
-                    
-                }
-                else{
+                if (!currentOperator.innerText) {
                     currentOperator.innerText = '*'
                 }
-                console.log('MLLTIPLICATION OPERATON:')
+                console.log('MULTIPLICATION OPERATON:')
                 if (output.innerText === '0') {
                     return
                 }
                 else if(tempVar){
                     outputVar = output.innerText
                     res = eval(outputVar + currentOperator.innerText + tempVar)
-                    console.log(outputVar + currentOperator.innerText + tempVar)
                     console.log(`currentOperator: ${currentOperator.innerText}`)
                     console.log(`tempVar: ${tempVar}`)
                     console.log(`outputVar: ${outputVar}`)
@@ -125,7 +126,6 @@ buttons.forEach(button => {
                     temp.innerText = res
                     tempVar = res
                     output.innerText = '0'
-                    return
                 }
                 else{
                     tempVar = output.innerText
@@ -136,10 +136,7 @@ buttons.forEach(button => {
                 break;
 
             case '/':
-                if (currentOperator.innerText) {
-                    
-                }
-                else{
+                if (!currentOperator.innerText) {
                     currentOperator.innerText = '/'
                 }
                 console.log('DIVISION OPERATON:')
