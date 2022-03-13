@@ -18,10 +18,10 @@ buttons.forEach(button => {
             case 'C':
                 output.innerText = '0'
                 temp.innerText = '0'
-                currentOperator.innerText = ''
                 res = '0'
                 outputVar = '0'
                 tempVar = '0'
+                currentOperator.innerText = ''
                 console.log(`tempVar: ${tempVar}`)
                 console.log(`outputVar: ${outputVar}`)
                 console.log(`res: ${res}`)
@@ -33,9 +33,14 @@ buttons.forEach(button => {
                 }
                 break;
             case '=':
-                console.log('EQUAL OPERATON:')
                 outputVar = output.innerText
-                console.log(outputVar + currentOperator.innerText + tempVar)
+                console.log('EQUAL OPERATON:')
+                console.log('VALUES BEFORE THE CALCULATION')
+                console.log(`currentOperator: ${currentOperator.innerText}`)
+                console.log(`tempVar: ${tempVar}`)
+                console.log(`outputVar: ${outputVar}`)
+                console.log(`res: ${res}`)
+                console.log(tempVar + currentOperator.innerText + outputVar)
                 res = eval(tempVar + currentOperator.innerText + outputVar)
                 console.log(res)
                 outputVar = 0
@@ -43,22 +48,23 @@ buttons.forEach(button => {
                 tempVar = 0
                 currentOperator.innerText = 0
                 output.innerText = res
+                console.log('VALUES AFTER THE CALCULATION')
                 console.log(`currentOperator: ${currentOperator.innerText}`)
                 console.log(`tempVar: ${tempVar}`)
                 console.log(`outputVar: ${outputVar}`)
                 console.log(`res: ${res}`)
                 break;
             case '+':
-                if (!currentOperator.innerText) {
-                    currentOperator.innerText = '+'
-                }
                 console.log('ADDITION OPERATON:')
                 if (output.innerText === '0') {
                     return
                 }
-                else if(tempVar){
+
+                else{
+                    console.log('currentOperator took +')
+                    currentOperator.innerText = '+'
                     outputVar = output.innerText
-                    res = eval(outputVar + currentOperator.innerText + tempVar)
+                    res = eval(tempVar + currentOperator.innerText + outputVar)
                     console.log(`currentOperator: ${currentOperator.innerText}`)
                     console.log(`tempVar: ${tempVar}`)
                     console.log(`outputVar: ${outputVar}`)
@@ -66,32 +72,20 @@ buttons.forEach(button => {
                     temp.innerText = res
                     tempVar = res
                     output.innerText = '0'
-                    return
-                }
-                else{
-                    tempVar = output.innerText
-                    temp.innerText = output.innerText + currentOperator.innerText
-                    console.log(tempVar)
-                    output.innerText = '0'  
-                    console.log('ELSE VALUES')
-                    console.log(`currentOperator: ${currentOperator.innerText}`)
-                    console.log(`tempVar: ${tempVar}`)
-                    console.log(`outputVar: ${outputVar}`)
-                    console.log(`res: ${res}`)
+
                 }
                 break;
             case '-':
-                if (!currentOperator.innerText) {
-                    currentOperator.innerText = '-'
-                }
                 console.log('SUBTRACTION OPERATON:')
                 if (output.innerText === '0') {
                     return
                 }
-                else if(tempVar){
+
+                else{
+                    console.log('currentOperator took +')
+                    currentOperator.innerText = '-'
                     outputVar = output.innerText
                     res = eval(outputVar + currentOperator.innerText + tempVar)
-                    console.log(tempVar + currentOperator.innerText + outputVar)
                     console.log(`currentOperator: ${currentOperator.innerText}`)
                     console.log(`tempVar: ${tempVar}`)
                     console.log(`outputVar: ${outputVar}`)
@@ -99,17 +93,12 @@ buttons.forEach(button => {
                     temp.innerText = res
                     tempVar = res
                     output.innerText = '0'
-                    return
-                }
-                else{
-                    tempVar = output.innerText
-                    temp.innerText = output.innerText + currentOperator.innerText
-                    console.log(tempVar)
-                    output.innerText = '0'  
+
                 }
                 break;
             case 'x':
                 if (!currentOperator.innerText) {
+                    console.log('currentOperator took *')
                     currentOperator.innerText = '*'
                 }
                 console.log('MULTIPLICATION OPERATON:')
@@ -118,7 +107,7 @@ buttons.forEach(button => {
                 }
                 else if(tempVar){
                     outputVar = output.innerText
-                    res = eval(outputVar + currentOperator.innerText + tempVar)
+                    res = eval(tempVar + currentOperator.innerText + outputVar)
                     console.log(`currentOperator: ${currentOperator.innerText}`)
                     console.log(`tempVar: ${tempVar}`)
                     console.log(`outputVar: ${outputVar}`)
