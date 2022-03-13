@@ -8,6 +8,7 @@ let outputVar = 0
 let tempVar = 0
 let res = 0
 
+currentOperator.innerText = ''
 console.log('INITIALIZED VALUES')
 console.log(`currentOperator: ${currentOperator.innerText}`)
 console.log(`tempVar: ${tempVar}`)
@@ -46,6 +47,9 @@ buttons.forEach(button => {
             case '←':
                 if(output.innerText > '0'){
                     output.innerText = output.innerText.slice(0,-1)
+                }
+                if (output.innerText <= '0') {
+                    output.innerText = 0
                 }
                 break;
             case '=':
@@ -110,6 +114,9 @@ buttons.forEach(button => {
                     return
                 }
                 else{
+                    if (tempVar === '0') {
+                        alert('its zero')
+                    }
                     outputVar = output.innerText
                     res = eval(tempVar + currentOperator.innerText + outputVar)
                     console.log('currentOperator took -')
