@@ -2,7 +2,7 @@ const output = document.querySelector('.result-1')
 const temp = document.querySelector('.result-0')
 const currentOperator = document.querySelectorAll('.operation')
 const buttons = document.querySelectorAll('.button')
-let outputVar
+let outputVar = 0
 let tempVar = 0
 let res = 0
 
@@ -13,7 +13,13 @@ buttons.forEach(button => {
                 output.innerText = '0'
                 temp.innerText = '0'
                 currentOperator.innerText = ''
-                res = ''
+                res = '0'
+                outputVar = '0'
+                tempVar = '0'
+                console.log(`tempVar: ${tempVar}`)
+                console.log(`outputVar: ${outputVar}`)
+                console.log(`res: ${res}`)
+                console.log(`currentOperator: ${currentOperator.innerText}`)
                 break;
             case '←':
                 if(output.innerText > '0'){
@@ -32,6 +38,9 @@ buttons.forEach(button => {
                     console.log(`outputVar: ${outputVar}`)
                     console.log(`res: ${res}`)
                     console.log(`currentOperator: ${currentOperator.innerText}`)
+                    temp.innerText = res
+                    output.innerText = '0'
+                    return
                 }
                 else{
                     tempVar = output.innerText
@@ -101,7 +110,7 @@ currentOperator.forEach(operator => {
         switch (operator.innerText) {
             case '+':
                 console.log('ADD')
-                outputVar = output.innerText
+                // outputVar = output.innerText
                 break;
                 case '-':
                     console.log('SUB')
