@@ -37,7 +37,6 @@ buttons.forEach(button => {
                 upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
                 upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
                 upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
-                
                 upd.innerHTML += `<P>Result: ${res}</p>`
                 upd.innerHTML += `<br>`
                 console.log(`tempVar: ${tempVar}`)
@@ -89,34 +88,23 @@ buttons.forEach(button => {
                 }
 
                 else{
-                    // console.log('currentOperator took +')
-                    // currentOperator.innerText = '+'
-                    // outputVar = output.innerText
-                    // res = eval(tempVar + currentOperator.innerText + outputVar)
-                    // console.log(`currentOperator: ${currentOperator.innerText}`)
-                    // console.log(`tempVar: ${tempVar}`)
-                    // console.log(`outputVar: ${outputVar}`)
-                    // console.log(`res: ${res}`)
-                    // upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
-                    // upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
-                    // upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
-                    // upd.innerHTML += `<P>Result: ${res}</p>`
-                    // upd.innerHTML += `<br>`
-                    // temp.innerText = res
-                    // tempVar = res
-                    // output.innerText = '0'
-                    
-                    temp.innerText = output.innerText
-                    output.innerText = 0
+                    console.log('currentOperator took +')
                     currentOperator.innerText = '+'
                     outputVar = output.innerText
-                    tempVar = temp.innerText
                     res = eval(tempVar + currentOperator.innerText + outputVar)
+                    console.log(`currentOperator: ${currentOperator.innerText}`)
+                    console.log(`tempVar: ${tempVar}`)
+                    console.log(`outputVar: ${outputVar}`)
+                    console.log(`res: ${res}`)
                     upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
                     upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
                     upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
                     upd.innerHTML += `<P>Result: ${res}</p>`
                     upd.innerHTML += `<br>`
+                    temp.innerText = res
+                    tempVar = res
+                    output.innerText = '0'
+
                 }
                 break;
             case '-':
@@ -126,28 +114,23 @@ buttons.forEach(button => {
                     return
                 }
                 else{
-
-                    // outputVar = output.innerText
-                    // res = eval(outputVar + currentOperator.innerText + tempVar)
-                    // console.log('currentOperator took -')
-                    // currentOperator.innerText = '-'
-                    // console.log(`currentOperator: ${currentOperator.innerText}`)
-                    // console.log(`tempVar: ${tempVar}`)
-                    // console.log(`outputVar: ${outputVar}`)
-                    // console.log(`res: ${res}`)
-                    // temp.innerText = res
-                    // tempVar = res
-                    // output.innerText = '0'
-                    temp.innerText = output.innerText
-                    output.innerText = 0
-                    currentOperator.innerText = '-'
                     outputVar = output.innerText
-                    tempVar = temp.innerText
+                    res = eval(tempVar + currentOperator.innerText + outputVar)
+                    
+                    console.log('currentOperator took -')
+                    currentOperator.innerText = '-'
+                    console.log(`currentOperator: ${currentOperator.innerText}`)
+                    console.log(`tempVar: ${tempVar}`)
+                    console.log(`outputVar: ${outputVar}`)
+                    console.log(`res: ${res}`)
                     upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
                     upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
                     upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
                     upd.innerHTML += `<P>Result: ${res}</p>`
                     upd.innerHTML += `<br>`
+                    temp.innerText = res
+                    tempVar = res
+                    output.innerText = '0'
                 }
                 break;
             case 'x':
@@ -157,32 +140,22 @@ buttons.forEach(button => {
                     return
                 }
                 else{
-                    // outputVar = output.innerText
-                    // res = eval(tempVar + currentOperator.innerText + outputVar)
-                    // console.log('currentOperator took *')
-                    // currentOperator.innerText = '*'
-                    // console.log(`currentOperator: ${currentOperator.innerText}`)
-                    // console.log(`tempVar: ${tempVar}`)
-                    // console.log(`outputVar: ${outputVar}`)
-                    // console.log(`res: ${res}`)
-                    // temp.innerText = res
-                    // upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
-                    // upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
-                    // upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
-                    // upd.innerHTML += `<P>Result: ${res}</p>`
-                    // upd.innerHTML += `<br>`
-                    // tempVar = res
-                    // output.innerText = '0'
-                    temp.innerText = output.innerText
-                    output.innerText = 0
-                    currentOperator.innerText = '*'
                     outputVar = output.innerText
-                    tempVar = temp.innerText
+                    res = eval(tempVar + currentOperator.innerText + outputVar)
+                    console.log('currentOperator took *')
+                    currentOperator.innerText = '*'
+                    console.log(`currentOperator: ${currentOperator.innerText}`)
+                    console.log(`tempVar: ${tempVar}`)
+                    console.log(`outputVar: ${outputVar}`)
+                    console.log(`res: ${res}`)
+                    temp.innerText = res
                     upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
                     upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
                     upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
                     upd.innerHTML += `<P>Result: ${res}</p>`
                     upd.innerHTML += `<br>`
+                    tempVar = res
+                    output.innerText = '0'
                 }
                 break;
 
@@ -193,32 +166,22 @@ buttons.forEach(button => {
                     return
                 }
                 else{
-                    // outputVar = output.innerText
-                    // res = eval(tempVar + currentOperator.innerText + outputVar)
-                    // console.log('currentOperator took /')
-                    // currentOperator.innerText = '/'
-                    // console.log(`currentOperator: ${currentOperator.innerText}`)
-                    // console.log(`tempVar: ${tempVar}`)
-                    // console.log(`outputVar: ${outputVar}`)
-                    // console.log(`res: ${res}`)
-                    // upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
-                    // upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
-                    // upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
-                    // upd.innerHTML += `<P>Result: ${res}</p>`
-                    // upd.innerHTML += `<br>`
-                    // temp.innerText = res
-                    // tempVar = res
-                    // output.innerText = '0'
-                    temp.innerText = output.innerText
-                    output.innerText = 0
-                    currentOperator.innerText = '/'
                     outputVar = output.innerText
-                    tempVar = temp.innerText
-                    // upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
-                    // upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
-                    // upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
-                    // upd.innerHTML += `<P>Result: ${res}</p>`
-                    // upd.innerHTML += `<br>`
+                    res = eval(tempVar + currentOperator.innerText + outputVar)
+                    console.log('currentOperator took /')
+                    currentOperator.innerText = '/'
+                    console.log(`currentOperator: ${currentOperator.innerText}`)
+                    console.log(`tempVar: ${tempVar}`)
+                    console.log(`outputVar: ${outputVar}`)
+                    console.log(`res: ${res}`)
+                    upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
+                    upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
+                    upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
+                    upd.innerHTML += `<P>Result: ${res}</p>`
+                    upd.innerHTML += `<br>`
+                    temp.innerText = res
+                    tempVar = res
+                    output.innerText = '0'
                 }
                 break;
             case '.':
