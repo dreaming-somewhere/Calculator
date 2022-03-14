@@ -37,6 +37,7 @@ buttons.forEach(button => {
                 upd.innerHTML += `<P>Current Operator: ${currentOperator.innerText}</p>`
                 upd.innerHTML += `<P>Output Variable: ${outputVar}</p>`
                 upd.innerHTML += `<P>Temp Variable: ${tempVar}</p>`
+                
                 upd.innerHTML += `<P>Result: ${res}</p>`
                 upd.innerHTML += `<br>`
                 console.log(`tempVar: ${tempVar}`)
