@@ -115,10 +115,9 @@ buttons.forEach(button => {
                 }
                 else{
                     if (tempVar === '0') {
-                        alert('its zero')
                     }
                     outputVar = output.innerText
-                    res = eval(tempVar + currentOperator.innerText + outputVar)
+                    res = eval(outputVar + currentOperator.innerText + tempVar)
                     console.log('currentOperator took -')
                     currentOperator.innerText = '-'
                     console.log(`currentOperator: ${currentOperator.innerText}`)
