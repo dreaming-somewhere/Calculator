@@ -146,7 +146,7 @@ buttons.forEach(button => {
                 else{
                     outputVar = output.innerText
                     if (tempVar > 0) {
-                        res = eval(outputVar + currentOperator.innerText + tempVar)
+                        res = eval(tempVar + currentOperator.innerText + outputVar)
                     }
                     else{
                         res = outputVar
