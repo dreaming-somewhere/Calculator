@@ -115,8 +115,12 @@ buttons.forEach(button => {
                 }
                 else{
                     outputVar = output.innerText
-                    res = eval(tempVar + currentOperator.innerText + outputVar)
-                    
+                    if (tempVar > 0) {
+                        res = eval(outputVar + currentOperator.innerText + tempVar)
+                    }
+                    else{
+                        res = outputVar
+                    }
                     console.log('currentOperator took -')
                     currentOperator.innerText = '-'
                     console.log(`currentOperator: ${currentOperator.innerText}`)
@@ -141,7 +145,12 @@ buttons.forEach(button => {
                 }
                 else{
                     outputVar = output.innerText
-                    res = eval(tempVar + currentOperator.innerText + outputVar)
+                    if (tempVar > 0) {
+                        res = eval(outputVar + currentOperator.innerText + tempVar)
+                    }
+                    else{
+                        res = outputVar
+                    }
                     console.log('currentOperator took *')
                     currentOperator.innerText = '*'
                     console.log(`currentOperator: ${currentOperator.innerText}`)
@@ -167,7 +176,12 @@ buttons.forEach(button => {
                 }
                 else{
                     outputVar = output.innerText
-                    res = eval(tempVar + currentOperator.innerText + outputVar)
+                    if (tempVar > 0) {
+                        res = eval(outputVar + currentOperator.innerText + tempVar)
+                    }
+                    else{
+                        res = outputVar
+                    }
                     console.log('currentOperator took /')
                     currentOperator.innerText = '/'
                     console.log(`currentOperator: ${currentOperator.innerText}`)
