@@ -1,3 +1,5 @@
+https://dreaming-somewhere.github.io/Calculator/
+
 Project context
 
 Un site international de "tools" en ligne situé au canada vous a contacté pour une mission freelance Vous avez été chargés de faire une tâche . votre tâche est des créer une calculatrice en javascript qui comporte les spécifications suivantes:
